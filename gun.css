@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+}
+
+.game-container {
+  display: flex;
+  justify-content:flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  gap: 7px;
+  background-image:linear-gradient(to bottom,hotpink 0%,hotpink 100%),linear-gradient(to bottom,powderblue 0%, powderblue 100%);
+  background-clip: content-box,padding-box;
+  width: 900px;
+  height: 550px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Item container */
+.item{
+  width: 10vw; /* Scaled down for responsiveness */
+  height: 10vw; /* Maintain aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Face */
+.face {
+  position: relative;
+  width: 60%; /* Scaled for responsiveness */
+  height: 60%;
+  background-color: #fff;
+  border: 0.6vw solid black; /* Scaled border */
+  border-radius: 50%;
+}
+
+/* Ears */
+.ear {
+  position: absolute;
+  width: 3vw; /* Scaled for responsiveness */
+  height: 2vw; 
+  background-color: #fff;
+  border: 0.5vw solid black; /* Scaled border */
+  border-radius: 50%;
+  top: -1vw; /* Adjusted position */
+}
+
+.ear.left {
+  left: -1vw;
+  transform: rotate(-30deg);
+}
+
+.ear.right {
+  right: -1vw;
+  transform: rotate(30deg);
+}
+
+/* Bow */
+.bow {
+  position: absolute;
+  top: -2vw; /* Adjusted position */
+  left: 3vw; /* Adjusted position */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bow .circle {
+  width: 2vw; /* Scaled size */
+  height: 2vw; 
+  background-color: hotpink;
+  border: 0.4vw solid black; /* Scaled border */
+  border-radius: 50%;
+  z-index: 1;
+  
+ 
+}
+
+.bow .ribbon {
+  position: absolute;
+  width: 2vw; /* Scaled size */
+  height: 2vw;
+  background-color: rgb(229, 15, 122);
+  border: 0.5vw solid black; /* Scaled border */
+  border-radius: 50% 50% 0 0;
+}
+
+.bow .ribbon.left {
+  left: -1vw;
+}
+
+.bow .ribbon.right {
+  right: -1vw;
+}
+
+/* Eyes */
+.eyes {
+  position: absolute;
+  top: 30%; 
+  left:1%;
+  display: flex;
+  gap: 3vw; /* Scaled gap */
+}
+
+.eye {
+  width: 1vw; /* Scaled size */
+  height: 1vw; 
+  background-color: black;
+  border-radius: 50%;
+}
+
+/* Nose */
+.nose {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1vw; /* Scaled size */
+  height: 1vw; 
+  background-color: #ffc107;
+  border-radius: 50%;
+}
+
+/* Whiskers */
+.whiskers {
+  position: absolute;
+  top: 40%; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.whisker {
+  width: 1vw; /* Scaled size */
+  height: 0.2vw; 
+  background-color: black;
+  position: absolute;
+}
+
+.whisker.left-top {
+  left: -1vw;
+  top: -0.4vw;
+}
+
+.whisker.left-bottom {
+  left: -1vw;
+  top: 0;
+}
+
+.whisker.right-top {
+  right: -1vw;
+  top: -0vw;
+}
+
+.whisker.right-bottom {
+  right: -1vw;
+  top: 0.4vw;
+}
+
+.gun {
+  position: absolute;
+  bottom: 10px;
+  width: 50px;
+  height: 20px;
+  background-color: blue;
+  left: 50%; /* Center the gun initially */
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#bullets-left {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#status {
+  font-size: 20px;
+  color: #ffd700; /* Golden color for game status */
+}
